@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <h3>Search Result</h3>
+    {% for image in similar_images %}
+      <div class='image_div'>
+        <img src="{{image['file_path']}}" alt="" class="puzzle_thumb double_border">
+        <p class='image_name'> {{image['name']}}</p>
+        <p class='image_description'> {{ image['description'] }}</p>
+      </div>
+    {% else %}
+      <p> There are no matching images!</p>
+    {% endfor %}
+
+{% endblock %}
